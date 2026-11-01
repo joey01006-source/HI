@@ -1,0 +1,14 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Play Square",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/square.pyw",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "justMyCode": true
+        }
+    ]
+}
