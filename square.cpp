@@ -23,8 +23,7 @@ LRESULT CALLBACK windowProcedure(HWND window, UINT message, WPARAM w, LPARAM l) 
     return DefWindowProcW(window, message, w, l);
 }
 
-int main() {
-    HINSTANCE instance = GetModuleHandleW(nullptr);
+int WINAPI WinMain(HINSTANCE instance, HINSTANCE, LPSTR, int showCommand) {
     WNDCLASSW definition = {};
     definition.lpfnWndProc = windowProcedure;
     definition.hInstance = instance;
@@ -37,7 +36,7 @@ int main() {
         WS_OVERLAPPEDWINDOW, CW_USEDEFAULT, CW_USEDEFAULT, 500, 500,
         nullptr, nullptr, instance, nullptr);
     if (!window) return 1;
-    ShowWindow(window, SW_SHOW);
+    ShowWindow(window, showCommand);
     MSG message;
     int result;
     while ((result = GetMessageW(&message, nullptr, 0, 0)) > 0) {

@@ -4,14 +4,24 @@ A C++ program that opens a window and draws a blue square. Close the window to e
 
 ## Windows
 
-In a Visual Studio Developer Command Prompt, build and run:
+Download the latest repository files to your computer, then double-click
+**play.bat**. It builds the program and opens a separate game-style window.
+The game executable uses the Windows GUI subsystem, so it does not open a console.
+The build step may briefly show a terminal.
+
+You need Visual Studio or Visual Studio Build Tools with the **Desktop development
+with C++** workload installed. The launcher finds the compiler automatically.
+
+Alternatively, in a Visual Studio Developer Command Prompt:
 
 ```bat
-cl /EHsc /std:c++17 square.cpp user32.lib gdi32.lib /Fe:square.exe
-square.exe
+cl /EHsc /std:c++17 square.cpp user32.lib gdi32.lib /Fe:square.exe /link /SUBSYSTEM:WINDOWS
+start "" square.exe
 ```
 
-Once built, you can also double-click `square.exe`.
+After running the launcher once, double-click `build\square.exe` to open the
+window directly. Re-run `play.bat` after downloading source updates; an older
+executable will keep showing the old behavior.
 
 ## Linux
 
